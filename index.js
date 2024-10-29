@@ -104,3 +104,138 @@ console.log(product)
 // 10 Simular un carrito de compras
 // Crea un carrito de compras que incluya 3 productos. Cada producto debe incluir un nombre, un precio y una cantidad. Luego, calcula el precio total del carrito y muestra el carrito completo junto al total en la consola.
 
+
+//--------------------respuestas-------------------------
+//-------------------------------------------------------
+//1 Generar un nombre completo y una dirección de correo electrónico
+
+const { faker } = require('@faker-js/faker');
+
+const name = faker.name.fullName();
+const email = faker.internet.email();
+
+console.log('Nombre:', name);
+console.log('Correo:', email);
+
+//-------------------------------------------------------
+//2 Crear un perfil de usuario
+
+const { faker } = require('@faker-js/faker');
+
+const userProfile = {
+  name: faker.name.fullName(),
+  email: faker.internet.email(),
+  address: faker.address.streetAddress(),
+  city: faker.address.city(),
+  country: faker.address.country(),
+  phone: faker.phone.number(),
+};
+
+console.log('Perfil de usuario:', userProfile);
+
+//-------------------------------------------------------
+//3 Generar lista de productos
+
+const { faker } = require('@faker-js/faker');
+
+const products = Array.from({ length: 5 }, () => ({
+  name: faker.commerce.productName(),
+  description: faker.commerce.productDescription(),
+  price: faker.commerce.price(),
+}));
+
+console.log('Lista de productos:', products);
+
+//-------------------------------------------------------
+//4 Generar direcciones IP aleatorias
+
+const { faker } = require('@faker-js/faker');
+
+const ips = Array.from({ length: 3 }, () => faker.internet.ip());
+
+console.log('Direcciones IP:', ips);
+
+//-------------------------------------------------------
+//5 Simular mensajes de chat
+
+const { faker } = require('@faker-js/faker');
+
+const chatMessages = Array.from({ length: 5 }, () => ({
+  user: faker.internet.userName(),
+  message: faker.lorem.sentence(),
+}));
+
+console.log('Mensajes de chat:', chatMessages);
+
+//-------------------------------------------------------
+//6 Crear un historial de transacciones bancarias
+
+const { faker } = require('@faker-js/faker');
+
+const transactions = Array.from({ length: 10 }, () => ({
+  amount: faker.finance.amount(-500, 500),
+  date: faker.date.recent(),
+  description: faker.finance.transactionDescription(),
+}));
+
+console.log('Historial de transacciones:', transactions);
+
+//-------------------------------------------------------
+//7 Generar datos de una empresa ficticia
+
+const { faker } = require('@faker-js/faker');
+
+const company = {
+  name: faker.company.name(),
+  address: faker.address.streetAddress(),
+  phone: faker.phone.number(),
+  industry: faker.company.industry(),
+};
+
+console.log('Empresa:', company);
+
+//-------------------------------------------------------
+//8 Generar una lista de citas médicas
+
+const { faker } = require('@faker-js/faker');
+
+const appointments = Array.from({ length: 5 }, () => ({
+  patientName: faker.name.fullName(),
+  doctorName: faker.name.fullName(),
+  date: faker.date.future(),
+  reason: faker.lorem.sentence(),
+}));
+
+console.log('Citas médicas:', appointments);
+
+//-------------------------------------------------------
+//9 Crear perfiles de redes sociales
+
+const { faker } = require('@faker-js/faker');
+
+const socialProfiles = Array.from({ length: 3 }, () => ({
+  name: faker.name.fullName(),
+  username: faker.internet.userName(),
+  bio: faker.lorem.sentence(),
+  profileLink: faker.internet.url(),
+}));
+
+console.log('Perfiles de redes sociales:', socialProfiles);
+
+//-------------------------------------------------------
+//10 Simular un carrito de compras
+
+const { faker } = require('@faker-js/faker');
+
+const cart = Array.from({ length: 3 }, () => ({
+  product: faker.commerce.productName(),
+  price: parseFloat(faker.commerce.price()),
+  quantity: faker.datatype.number({ min: 1, max: 5 }),
+}));
+
+const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+console.log('Carrito de compras:', cart);
+console.log('Total:', total.toFixed(2));
+
+
